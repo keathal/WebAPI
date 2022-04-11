@@ -22,7 +22,7 @@ namespace WebAPI.Controllers
         [HttpPost]
         public async Task<IEnumerable<Note>?> Post([FromBody] List<PostObject> postObjects)
         {
-            if (postObjects == null) return null;
+            if (postObjects.Count == 0) return null;
 
             _context.Notes.RemoveRange(_context.Notes);
 
